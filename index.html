@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A. O. M. Shamsuddoha</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A. O. M. Shamsuddoha, Lecturer in Electrical and Electronic Engineering at ULAB, Dhaka. Research in low-power VLSI, in-memory computing and beyond von Neumann architectures. Seeking PhD positions in ECE.">
+<meta name="author" content="A. O. M. Shamsuddoha">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="A. O. M. Shamsuddoha · Electrical and Electronic Engineering">
+<meta property="og:description" content="Low-power VLSI, in-memory computing and beyond von Neumann architectures. Lecturer at ULAB, Dhaka. Seeking PhD positions in ECE.">
+<meta property="og:url" content="https://aomshamsuddoha.github.io/">
+<meta property="og:image" content="https://aomshamsuddoha.github.io/assets/profile.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23163A7A'/%3E%3Ctext x='32' y='44' font-family='Arial,Helvetica,sans-serif' font-size='30' font-weight='700' fill='white' text-anchor='middle'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"A. O. M. Shamsuddoha","jobTitle":"Lecturer and Program Coordinator, Department of Electrical and Electronic Engineering","affiliation":{"@type":"CollegeOrUniversity","name":"University of Liberal Arts Bangladesh"},"email":"mailto:shams.aoms@gmail.com","url":"https://aomshamsuddoha.github.io/","sameAs":["https://www.linkedin.com/in/aom-shamsuddoha","https://scholar.google.com/citations?user=cvKcdi4AAAAJ","https://orcid.org/0000-0003-1254-0381","https://www.researchgate.net/profile/A-O-M-Shamsuddoha"]}
+</script>
+<style>
+/* Layout: Swiss 12-column grid. Each section = a 3-col label rail on the left + 9-col content on the right, separated by full-width hairlines. */
+:root{
+  --paper:#F6F7F8;      /* page ground, faint cool bias */
+  --surface:#FFFFFF;    /* raised panels */
+  --ink:#111418;        /* primary text */
+  --ink-2:#4A5260;      /* secondary text */
+  --ink-3:#7C8492;      /* captions, meta */
+  --rule:#D9DDE3;       /* hairlines */
+  --accent:#163A7A;     /* deep silicon blue */
+  --accent-soft:#E6ECF7;
+  --font-display:"Schibsted Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-body:"Schibsted Grotesk","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --step-0:1rem; --step-1:1.125rem; --step-2:1.375rem; --step-3:1.75rem; --step-4:clamp(2.4rem,6.2vw,4.6rem);
+  --wrap:1180px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F1216;--surface:#161A20;--ink:#ECEEF1;--ink-2:#AEB5C0;--ink-3:#808897;--rule:#2A3039;--accent:#8FB0F0;--accent-soft:#1B2638;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F1216;--surface:#161A20;--ink:#ECEEF1;--ink-2:#AEB5C0;--ink-3:#808897;--rule:#2A3039;--accent:#8FB0F0;--accent-soft:#1B2638;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration-color:var(--rule);text-underline-offset:3px;text-decoration-thickness:1px;transition:color .15s,text-decoration-color .15s}
+a:hover{color:var(--accent);text-decoration-color:currentColor}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:720px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+.mono{font-family:var(--font-mono);font-size:.8125rem;letter-spacing:.02em}
+.label{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--rule)}
+.nav{display:flex;align-items:center;gap:24px;height:64px}
+.brand{font-weight:600;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--ink-3);font-weight:400}
+.nav-links{display:flex;gap:22px;margin-left:auto;list-style:none;padding:0;margin-block:0}
+.nav-links a{text-decoration:none;font-size:.9375rem;color:var(--ink-2);padding-block:6px;border-bottom:1.5px solid transparent}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);border-bottom-color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:500 .9375rem/1 var(--font-body);padding:12px 18px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+:root[data-theme="dark"] .btn.primary{color:#0F1216}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#0F1216}}
+.btn.small{padding:9px 14px;font-size:.875rem}
+.btn svg{width:16px;height:16px;flex:none}
+.menu-btn{display:none;margin-left:auto;background:none;border:1.5px solid var(--rule);color:var(--ink);font:500 .875rem var(--font-body);padding:8px 12px;cursor:pointer}
+@media (max-width:960px){
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--rule);padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px))}
+  .nav-links.open{display:flex}
+  .nav-links a{display:block;padding:12px 0;border-bottom:1px solid var(--rule);font-size:1rem}
+  .menu-btn{display:inline-block}
+  .nav .btn.cv-top{display:none}
+}
+
+/* ---------- Hero ---------- */
+.hero{padding-block:clamp(48px,8vw,104px) clamp(40px,6vw,72px);border-bottom:1px solid var(--rule)}
+.hero-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.hero-text{grid-column:1/span 8;min-width:0}
+.hero-photo{grid-column:10/span 3}
+.hero .label{margin-bottom:28px;display:flex;gap:10px;align-items:center}
+.status-dot{width:8px;height:8px;border-radius:50%;background:#2E9E6A;box-shadow:0 0 0 4px color-mix(in srgb,#2E9E6A 18%,transparent)}
+.hero h1{font-size:var(--step-4);line-height:.98;letter-spacing:-.035em;font-weight:600}
+.hero .role{margin-top:24px;font-size:var(--step-2);line-height:1.35;color:var(--ink-2);max-width:34ch}
+.hero .thesis{margin-top:28px;font-size:var(--step-1);max-width:58ch;color:var(--ink)}
+.hero .thesis em{font-style:normal;color:var(--accent);font-weight:500}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.photo-frame{position:relative;aspect-ratio:4/5;max-width:100%;background:var(--surface);overflow:hidden}
+.photo-frame img{width:100%;height:100%;object-fit:cover}
+.photo-cap{margin-top:12px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(48px,6vw,72px);border-top:1px solid var(--rule)}
+.fact{padding:20px 20px 0 0;border-right:1px solid var(--rule);margin-right:20px}
+.fact:last-child{border-right:0;margin-right:0}
+.fact b{display:block;font-family:var(--font-display);font-size:var(--step-3);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.fact span{display:block;margin-top:6px;color:var(--ink-2);font-size:.9375rem;line-height:1.4}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-text,.hero-photo{grid-column:auto}
+  .hero-photo{order:-1;max-width:200px}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact:nth-child(2){border-right:0;margin-right:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--rule);margin-top:20px}
+}
+.profiles{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:28px;padding:0;list-style:none}
+.profiles a{font-size:.9375rem;color:var(--ink-2);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.profiles a::after{content:"↗";font-size:.8em;color:var(--ink-3);transition:transform .15s}
+.profiles a:hover{color:var(--accent)}
+.profiles a:hover::after{transform:translate(2px,-2px);color:var(--accent)}
+
+/* ---------- Sections ---------- */
+section.block{border-bottom:1px solid var(--rule);padding-block:clamp(56px,7vw,96px)}
+.sec{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.sec-head{grid-column:1/span 3;min-width:0}
+.sec-body{grid-column:4/span 9;min-width:0}
+.sec-head .label{display:block;margin-bottom:10px}
+.sec-head h2{font-size:var(--step-3);line-height:1.15;position:sticky;top:96px}
+.sec-head .label{position:sticky;top:76px}
+@media (max-width:860px){
+  .sec{grid-template-columns:1fr;gap:28px}
+  .sec-head,.sec-body{grid-column:auto}
+  .sec-head h2,.sec-head .label{position:static}
+}
+.prose p{max-width:66ch;color:var(--ink);font-size:var(--step-1);line-height:1.65}
+.prose p+p{margin-top:1.1em}
+.prose .muted{color:var(--ink-2)}
+
+/* Research interests */
+.interests{list-style:none;margin:0;padding:0;counter-reset:ri}
+.interests li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:22px 0;border-top:1px solid var(--rule)}
+.interests li:last-child{border-bottom:1px solid var(--rule)}
+.interests li::before{counter-increment:ri;content:counter(ri,decimal-leading-zero);font-family:var(--font-mono);font-size:.875rem;color:var(--ink-3);padding-top:4px}
+.interests li.core::before{color:var(--accent)}
+.interests h3{font-size:var(--step-2);font-weight:600;line-height:1.25}
+.interests p{margin-top:6px;color:var(--ink-2);max-width:62ch}
+.group-label{display:flex;justify-content:space-between;gap:16px;margin:0 0 10px}
+.group-label+.interests{margin-bottom:40px}
+
+/* Featured paper */
+.featured{background:var(--surface);border:1px solid var(--rule);padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px}
+.featured .label{color:var(--accent);margin-bottom:16px;display:block}
+.featured h3{font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.2;letter-spacing:-.02em;max-width:30ch}
+.featured .authors{margin-top:16px;color:var(--ink-2)}
+.featured .authors b{color:var(--ink);font-weight:600}
+.featured .venue{margin-top:4px;color:var(--ink-2);font-style:italic}
+.featured .why{margin-top:20px;max-width:64ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding:0;list-style:none}
+.tags li{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.03em;padding:5px 10px;background:var(--accent-soft);color:var(--accent)}
+.featured .actions{display:flex;flex-direction:column;gap:10px;align-items:stretch}
+.featured .year{font-family:var(--font-display);font-size:3.5rem;font-weight:600;line-height:1;letter-spacing:-.04em;color:var(--rule);text-align:right}
+@media (max-width:720px){.featured{grid-template-columns:1fr}.featured .year{text-align:left;font-size:2.5rem}.featured .actions{flex-direction:row;flex-wrap:wrap}}
+
+/* Publications */
+.pub-group+.pub-group{margin-top:48px}
+.pub-group h3{font-size:var(--step-1);font-weight:600;margin-bottom:6px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.pubs{list-style:none;margin:0;padding:0}
+.pubs li{display:grid;grid-template-columns:52px minmax(0,1fr) 56px;gap:16px;padding:20px 0;border-top:1px solid var(--rule)}
+.pubs li:last-child{border-bottom:1px solid var(--rule)}
+.pubs .id{font-family:var(--font-mono);font-size:.8125rem;color:var(--ink-3);padding-top:3px}
+.pubs .yr{font-family:var(--font-mono);font-size:.8125rem;color:var(--ink-3);text-align:right;padding-top:3px}
+.pubs .t{font-weight:500;font-size:1.0625rem;line-height:1.4}
+.pubs .a{margin-top:6px;color:var(--ink-2);font-size:.9375rem}
+.pubs .a b{color:var(--ink);font-weight:600}
+.pubs .v{margin-top:2px;color:var(--ink-2);font-size:.9375rem;font-style:italic}
+.pubs .links{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:10px;align-items:center}
+.pubs .links a{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);text-decoration:none}
+.pubs .links a:hover{text-decoration:underline}
+.chip{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.03em;padding:3px 8px;border:1px solid var(--rule);color:var(--ink-2)}
+.chip.first{border-color:var(--accent);color:var(--accent)}
+@media (max-width:600px){.pubs li{grid-template-columns:44px minmax(0,1fr)}.pubs .yr{grid-column:2;grid-row:1;text-align:left;padding-top:0}.pubs .id{grid-row:1 / span 2}}
+
+/* Timeline (experience, education) */
+.timeline{list-style:none;margin:0;padding:0}
+.timeline>li{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;padding:24px 0;border-top:1px solid var(--rule)}
+.timeline>li:last-child{border-bottom:1px solid var(--rule)}
+.timeline .when{font-family:var(--font-mono);font-size:.8125rem;color:var(--ink-3);padding-top:4px;font-variant-numeric:tabular-nums}
+.timeline .when .now{color:var(--accent)}
+.timeline h3{font-size:var(--step-1);font-weight:600;line-height:1.35}
+.timeline .org{color:var(--ink-2);margin-top:2px}
+.timeline .detail{margin-top:10px;color:var(--ink-2);max-width:64ch}
+.timeline ul.duties{margin:10px 0 0;padding-left:18px;color:var(--ink-2);max-width:64ch}
+.timeline ul.duties li{margin-top:4px}
+.courses{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;padding:0;list-style:none}
+.courses li{font-size:.8125rem;padding:4px 10px;border:1px solid var(--rule);color:var(--ink-2)}
+.grade{display:inline-block;margin-top:8px;font-family:var(--font-mono);font-size:.8125rem;color:var(--ink)}
+@media (max-width:640px){.timeline>li{grid-template-columns:1fr;gap:6px}}
+.subhead{font-size:var(--step-1);font-weight:600;margin:48px 0 6px}
+.subhead:first-child{margin-top:0}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.skill{padding:18px 0;border-top:1px solid var(--rule)}
+.skill .label{display:block;margin-bottom:6px}
+.skill p{color:var(--ink)}
+@media (max-width:640px){.skills{grid-template-columns:1fr}}
+
+/* Simple lists (service, training, awards) */
+.list{list-style:none;margin:0;padding:0}
+.list li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:14px 0;border-top:1px solid var(--rule)}
+.list li:last-child{border-bottom:1px solid var(--rule)}
+.list .when{font-family:var(--font-mono);font-size:.8125rem;color:var(--ink-3);padding-top:2px;font-variant-numeric:tabular-nums}
+.list .what{color:var(--ink)}
+.list .what small{display:block;color:var(--ink-2);font-size:.9rem;margin-top:2px}
+@media (max-width:560px){.list li{grid-template-columns:1fr;gap:2px}}
+details.more{margin-top:16px}
+details.more summary{cursor:pointer;font-family:var(--font-mono);font-size:.8125rem;color:var(--accent);list-style:none;padding:8px 0}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:"+ ";}
+details.more[open] summary::before{content:"− ";}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--paper);padding-block:clamp(64px,9vw,120px)}
+.contact .label{color:color-mix(in srgb,var(--paper) 60%,transparent)}
+.contact h2{font-size:clamp(2rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.03em;max-width:18ch;margin-top:16px}
+.contact p.lead{margin-top:20px;max-width:56ch;font-size:var(--step-1);color:color-mix(in srgb,var(--paper) 78%,transparent)}
+.email-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:40px}
+.email{font-family:var(--font-display);font-size:clamp(1.3rem,3.4vw,2.2rem);font-weight:500;letter-spacing:-.02em;color:var(--paper);text-decoration:none;border-bottom:2px solid color-mix(in srgb,var(--paper) 35%,transparent);user-select:all;overflow-wrap:anywhere}
+.email:hover{color:var(--paper);border-bottom-color:var(--paper)}
+.copy{background:transparent;border:1.5px solid color-mix(in srgb,var(--paper) 40%,transparent);color:var(--paper);font:500 .875rem var(--font-body);padding:9px 14px;cursor:pointer}
+.copy:hover{border-color:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:64px;padding-top:28px;border-top:1px solid color-mix(in srgb,var(--paper) 22%,transparent)}
+.contact-grid p,.contact-grid li{color:color-mix(in srgb,var(--paper) 82%,transparent);font-size:.9375rem}
+.contact-grid ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:4px}
+.contact-grid a{color:var(--paper);text-decoration-color:color-mix(in srgb,var(--paper) 35%,transparent)}
+.contact-grid .label{display:block;margin-bottom:8px}
+@media (max-width:760px){.contact-grid{grid-template-columns:1fr}}
+footer.site-footer{background:var(--ink);color:color-mix(in srgb,var(--paper) 55%,transparent);padding-block:24px 32px;border-top:1px solid color-mix(in srgb,var(--paper) 14%,transparent)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+
+<!-- =====================================================================
+     HOW TO UPDATE THIS PAGE
+     Each section below is marked with a banner like  ===== PUBLICATIONS =====
+     To add an item, copy one existing <li> ... </li> block inside that
+     section, paste it above or below, and change the text.
+     To update the CV, replace the file  cv/AOM_Shamsuddoha_CV.pdf
+     (keep the same file name) and the download button updates itself.
+     ===================================================================== -->
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#top">A. O. M. Shamsuddoha <span>· EEE</span></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn small cv-top" href="cv/AOM_Shamsuddoha_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="label"><span class="status-dot" aria-hidden="true"></span>Seeking PhD positions in Electrical &amp; Computer Engineering</p>
+        <h1>A.&nbsp;O.&nbsp;M. Shamsuddoha</h1>
+        <p class="role">Lecturer and Program Coordinator, Department of Electrical and Electronic Engineering, University of Liberal Arts Bangladesh</p>
+        <p class="thesis">I design energy-efficient circuits and want to rethink where computation happens. My research interests centre on <em>low-power VLSI</em>, <em>in-memory computing</em> and <em>computer architectures beyond von Neumann</em>.</p>
+        <div class="cta">
+          <a class="btn primary" href="cv/AOM_Shamsuddoha_CV.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+            Download CV
+          </a>
+          <a class="btn" href="#contact">Get in touch</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=cvKcdi4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame"><img src="assets/profile.jpg" alt="Portrait of A. O. M. Shamsuddoha" width="720" height="900"></div>
+        <p class="photo-cap label">Dhaka, Bangladesh</p>
+      </div>
+    </div>
+
+    <div class="facts tnum">
+      <div class="fact"><b>7</b><span>Peer-reviewed publications (IEEE)</span></div>
+      <div class="fact"><b>~6 yrs</b><span>University teaching across four institutions</span></div>
+      <div class="fact"><b>4</b><span>Conference technical review assignments</span></div>
+      <div class="fact"><b>8.0</b><span>IELTS Academic overall band (2024)</span></div>
+    </div>
+
+    <!-- Research profile links: edit or add an <li> -->
+    <ul class="profiles" aria-label="Research profiles">
+      <li><a href="https://scholar.google.com/citations?user=cvKcdi4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0003-1254-0381" target="_blank" rel="noopener">ORCID</a></li>
+      <li><a href="https://www.researchgate.net/profile/A-O-M-Shamsuddoha" target="_blank" rel="noopener">ResearchGate</a></li>
+      <li><a href="https://www.webofscience.com/wos/author/record/PVC-9513-2026" target="_blank" rel="noopener">Web of Science</a></li>
+      <li><a href="https://www.linkedin.com/in/aom-shamsuddoha" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://ulab.academia.edu/AOMShamsuddoha" target="_blank" rel="noopener">Academia.edu</a></li>
+      <li><a href="https://ulab.edu.bd/faculty/a-o-m-shamsuddoha" target="_blank" rel="noopener">ULAB faculty page</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="block" id="about">
+  <div class="wrap sec">
+    <div class="sec-head"><span class="label">About</span><h2>Profile</h2></div>
+    <div class="sec-body prose">
+      <p>I am a Lecturer in Electrical and Electronic Engineering at the University of Liberal Arts Bangladesh (ULAB) in Dhaka, where I have also served as Program Coordinator of the B.Sc. in EEE program since February 2025. Over nearly six years I have taught VLSI, solid-state devices, electronic circuits, power electronics and embedded systems at four universities.</p>
+      <p>My research began with my undergraduate thesis on low-power SRAM design using FinFETs. That work became my first-author paper, which combines adiabatic logic with FinFET-based SRAM to reduce power consumption. Since then I have co-authored seven peer-reviewed IEEE papers spanning circuit design, wireless communication, and machine learning for healthcare, often while mentoring undergraduate research teams.</p>
+      <p>I now want to commit to hardware research full time. I am looking for a PhD position in Electrical and Computer Engineering where I can work on low-power VLSI, in-memory computing and new transistor architectures. I bring hands-on experience with Cadence Virtuoso, Verilog and PSpice, and years of practice explaining circuits clearly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESEARCH ===================== -->
+<section class="block" id="research">
+  <div class="wrap sec">
+    <div class="sec-head"><span class="label">Research</span><h2>Research interests</h2></div>
+    <div class="sec-body">
+      <p class="group-label label"><span>Primary: hardware and computing</span><span>In order of priority</span></p>
+      <ol class="interests">
+        <li class="core"><div><h3>Low-power VLSI</h3><p>Circuit and device techniques that cut dynamic and leakage power in digital logic and memory, including FinFET-based design and adiabatic (energy-recovery) logic.</p></div></li>
+        <li class="core"><div><h3>In-memory computing</h3><p>Performing computation inside or beside memory arrays such as SRAM, to reduce the energy and delay spent moving data between memory and processor.</p></div></li>
+        <li class="core"><div><h3>Novel transistor architectures and semiconductor devices</h3><p>FinFET, gate-all-around and other emerging devices, and how their electrical behaviour shapes circuit and memory design.</p></div></li>
+        <li class="core"><div><h3>Beyond von Neumann computer architecture</h3><p>Architectures that loosen the separation between processing and memory to overcome the memory-wall bottleneck.</p></div></li>
+        <li class="core"><div><h3>Neuromorphic computing</h3><p>Brain-inspired hardware that uses spiking or analog computation for efficient learning and inference.</p></div></li>
+      </ol>
+      <p class="group-label label"><span>Applications</span></p>
+      <ol class="interests" start="6" style="counter-reset:ri 5">
+        <li><div><h3>Biomedical engineering</h3><p>Signal and image analysis for healthcare, building on my co-authored work on EEG-based seizure detection and brain tumour classification in MRI.</p></div></li>
+        <li><div><h3>Wearable electronics</h3><p>Body-worn sensing systems, where circuit-level energy efficiency directly sets battery life and usability.</p></div></li>
+      </ol>
+
+      <!-- Featured publication -->
+      <p class="label" style="margin:56px 0 14px">Featured publication</p>
+      <article class="featured">
+        <div>
+          <span class="label">First-author · Based on my B.Sc. thesis</span>
+          <h3>Design and Performance Analysis of SRAM Circuit Using Adiabatic Logic with FinFET</h3>
+          <p class="authors"><b>A. O. M. Shamsuddoha</b>, M. K. Islam and S. N. Biswas</p>
+          <p class="venue">2021 International Conference on Electronics, Communications and Information Technology (ICECIT), Bangladesh, pp. 1–4</p>
+          <p class="why">This paper applies adiabatic (energy-recovery) logic to an SRAM cell built with FinFET devices and analyses the resulting power and performance. It grew out of my undergraduate thesis, supervised by Prof. Satyendra Nath Biswas, and it is the work most closely aligned with the research I want to pursue in my PhD.</p>
+          <ul class="tags"><li>SRAM</li><li>FinFET</li><li>Adiabatic logic</li><li>Low-power design</li><li>Cadence Virtuoso</li></ul>
+        </div>
+        <div class="actions">
+          <span class="year tnum">2021</span>
+          <a class="btn small primary" href="https://doi.org/10.1109/ICECIT54077.2021.9641167" target="_blank" rel="noopener">Read on IEEE Xplore</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PUBLICATIONS =====================
+     To add a paper: copy one <li> ... </li> block and edit it.
+     Put your own name inside <b> ... </b>.  -->
+<section class="block" id="publications">
+  <div class="wrap sec">
+    <div class="sec-head"><span class="label">Publications</span><h2>Peer-reviewed work</h2></div>
+    <div class="sec-body">
+
+      <div class="pub-group">
+        <h3>Journal articles <span class="label">1</span></h3>
+        <ol class="pubs">
+          <li>
+            <span class="id">J1</span>
+            <div>
+              <p class="t">SleepingEdge: Real-Time Sleep-Stage-Driven Epileptic Seizure Detection Using HMM and Hybrid OptiNet-SVM</p>
+              <p class="a">M. Sakib, G. Hossain, T. Mahmud, A. Al Hasan, M. Nafis, M. Y. Hossain, N. M. Chisty, M. M. Mahmud, <b>A. O. M. Shamsuddoha</b> and M. M. Hossain</p>
+              <p class="v">IEEE Access, vol. 14, pp. 57646–57673</p>
+              <div class="links"><a href="https://doi.org/10.1109/ACCESS.2026.3682946" target="_blank" rel="noopener">doi:10.1109/ACCESS.2026.3682946</a></div>
+            </div>
+            <span class="yr">2026</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pub-group">
+        <h3>Conference papers <span class="label">6</span></h3>
+        <ol class="pubs">
+          <li>
+            <span class="id">C1</span>
+            <div>
+              <p class="t">An Efficient and Interpretable Hybrid FCM-ELM Framework with Entropy-Guided Feature Selection for Multiclass Brain Tumor MRI Segmentation and Classification</p>
+              <p class="a">S. H. M. Atul, R. A. Shium, <b>A. O. M. Shamsuddoha</b>, M. Islam, M. A. Hossain and M. Hasan</p>
+              <p class="v">IEEE International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON), Dhaka</p>
+              <div class="links"><span class="chip">Accepted and presented</span></div>
+            </div>
+            <span class="yr">2026</span>
+          </li>
+          <li>
+            <span class="id">C2</span>
+            <div>
+              <p class="t">A Low-Cost IoT-Based Smart Home Automation and Security System with Energy-Efficient Operation for Sustainable Living in Developing Regions</p>
+              <p class="a">M. M. L. Chowdhury, S. Sarder, M. R. Hossain, M. R. A. Panto, N. A. Mim and <b>A. O. M. Shamsuddoha</b></p>
+              <p class="v">2nd International Conference on Advances in Computing, Communication, Electrical, and Smart Systems (iCACCESS), Dhaka</p>
+              <div class="links"><span class="chip">Accepted and presented</span></div>
+            </div>
+            <span class="yr">2026</span>
+          </li>
+          <li>
+            <span class="id">C3</span>
+            <div>
+              <p class="t">Detection and Classification of Poultry Diseases Using Deep Convolutional Neural Networks: A Ten-Class Image-Based Approach</p>
+              <p class="a">S. H. M. Atul, <b>A. O. M. Shamsuddoha</b>, S. M. M. Islam, M. R. Biswas, H. K. F. Hai and S. M. Nawshed</p>
+              <p class="v">IEEE 4th International Conference on Robotics, Automation, Artificial-Intelligence and Internet-of-Things (RAAICON), Dhaka, pp. 462–467</p>
+              <div class="links"><a href="https://doi.org/10.1109/RAAICON69033.2025.11502034" target="_blank" rel="noopener">doi:10.1109/RAAICON69033.2025.11502034</a></div>
+            </div>
+            <span class="yr">2025</span>
+          </li>
+          <li>
+            <span class="id">C4</span>
+            <div>
+              <p class="t">Violence Detection: A Multi-Model Approach Towards Automated Video Surveillance and Public Safety</p>
+              <p class="a">S. Chakraborty, S. Zahir, N. T. Orchi, M. F. Bin Hafiz, <b>A. O. M. Shamsuddoha</b> and S. M. Dipto</p>
+              <p class="v">International Conference on Advances in Computing, Communication, Electrical, and Smart Systems (iCACCESS), Dhaka, pp. 1–6</p>
+              <div class="links"><a href="https://doi.org/10.1109/iCACCESS61735.2024.10499466" target="_blank" rel="noopener">doi:10.1109/iCACCESS61735.2024.10499466</a></div>
+            </div>
+            <span class="yr">2024</span>
+          </li>
+          <li>
+            <span class="id">C5</span>
+            <div>
+              <p class="t">Performance Evaluation of 2×2 and Massive 8×8 MIMO at 28 GHz and 60 GHz for Dhaka City</p>
+              <p class="a">S. J. Hamim, M. K. Islam, <b>A. O. M. Shamsuddoha</b>, S. Dhar and A. K. M. Baki</p>
+              <p class="v">IEEE 7th International Conference for Convergence in Technology (I2CT), pp. 1–5</p>
+              <div class="links"><a href="https://doi.org/10.1109/I2CT54291.2022.9825246" target="_blank" rel="noopener">doi:10.1109/I2CT54291.2022.9825246</a><span class="chip">Presented by me</span></div>
+            </div>
+            <span class="yr">2022</span>
+          </li>
+          <li>
+            <span class="id">C6</span>
+            <div>
+              <p class="t">Design and Performance Analysis of SRAM Circuit Using Adiabatic Logic with FinFET</p>
+              <p class="a"><b>A. O. M. Shamsuddoha</b>, M. K. Islam and S. N. Biswas</p>
+              <p class="v">International Conference on Electronics, Communications and Information Technology (ICECIT), Bangladesh, pp. 1–4</p>
+              <div class="links"><a href="https://doi.org/10.1109/ICECIT54077.2021.9641167" target="_blank" rel="noopener">doi:10.1109/ICECIT54077.2021.9641167</a><span class="chip first">First author</span></div>
+            </div>
+            <span class="yr">2021</span>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section class="block" id="experience">
+  <div class="wrap sec">
+    <div class="sec-head"><span class="label">Experience</span><h2>Academic appointments</h2></div>
+    <div class="sec-body">
+      <ol class="timeline">
+        <li>
+          <span class="when">Feb 2025 – <span class="now">Present</span></span>
+          <div>
+            <h3>Program Coordinator, B.Sc. in EEE</h3>
+            <p class="org">University of Liberal Arts Bangladesh (ULAB), Dhaka</p>
+            <ul class="duties">
+              <li>Plan semester course offerings and class routines, and assign teaching assistants</li>
+              <li>Form capstone project groups and organise moderation of examination questions</li>
+              <li>Prepare the department's ISO certification and SDG reports</li>
+              <li>Coordinate academic meetings, including continuous quality improvement (CQI) sessions, and advise students</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <span class="when">Jun 2023 – <span class="now">Present</span></span>
+          <div>
+            <h3>Lecturer, Department of Electrical and Electronic Engineering</h3>
+            <p class="org">University of Liberal Arts Bangladesh (ULAB), Dhaka</p>
+            <ul class="courses"><li>Electrical Circuits I</li><li>Electronic Circuits I</li><li>Electromagnetic Fields and Waves</li><li>Solid State Devices</li><li>Power Electronics</li><li>VLSI I</li><li>Microprocessor and Embedded Systems</li></ul>
+          </div>
+        </li>
+        <li>
+          <span class="when">Apr 2022 – May 2023</span>
+          <div>
+            <h3>Lecturer, Department of Electrical and Electronic Engineering</h3>
+            <p class="org">University of Scholars, Dhaka</p>
+            <p class="detail">Supervised several undergraduate projects in these areas.</p>
+            <ul class="courses"><li>VLSI I</li><li>Microprocessor and Interfacing</li><li>Electrical Properties of Materials</li><li>Electronic Devices and Circuits</li><li>Measurements and Instrumentation</li></ul>
+          </div>
+        </li>
+        <li>
+          <span class="when">Dec 2021 – May 2022</span>
+          <div>
+            <h3>Part-Time Lecturer, Department of Electrical and Electronic Engineering</h3>
+            <p class="org">Ahsanullah University of Science and Technology (AUST), Dhaka</p>
+            <ul class="courses"><li>VLSI I Lab</li><li>Microprocessor, Interfacing and System Design Lab</li><li>Energy Conversion II Lab</li></ul>
+          </div>
+        </li>
+        <li>
+          <span class="when">May 2019 – Apr 2020</span>
+          <div>
+            <h3>Lecturer, Department of Computer Science and Engineering</h3>
+            <p class="org">Daffodil International University, Dhaka</p>
+            <ul class="courses"><li>Electronic Devices and Circuits</li><li>Basic Electrical Circuits</li></ul>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="subhead">Technical skills</h3>
+      <div class="skills">
+        <div class="skill"><span class="label">VLSI design</span><p>Cadence Virtuoso, Microwind</p></div>
+        <div class="skill"><span class="label">Circuit simulation</span><p>OrCAD PSpice, Proteus, Quartus II</p></div>
+        <div class="skill"><span class="label">Programming and HDL</span><p>Verilog, MATLAB, C++, PHP, HTML</p></div>
+        <div class="skill"><span class="label">Design and documentation</span><p>AutoCAD, Tinkercad, LaTeX, Microsoft Office</p></div>
+        <div class="skill"><span class="label">Languages</span><p>Bengali (native), English (IELTS Academic 8.0), Hindi (basic)</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EDUCATION ===================== -->
+<section class="block" id="education">
+  <div class="wrap sec">
+    <div class="sec-head"><span class="label">Education</span><h2>Degrees</h2></div>
+    <div class="sec-body">
+      <ol class="timeline">
+        <li>
+          <span class="when">Coursework completed</span>
+          <div>
+            <h3>M.Sc. in Electrical and Electronic Engineering</h3>
+            <p class="org">Ahsanullah University of Science and Technology (AUST), Dhaka</p>
+            <span class="grade tnum">CGPA 3.50 / 4.00</span>
+          </div>
+        </li>
+        <li>
+          <span class="when">Dec 2018</span>
+          <div>
+            <h3>B.Sc. in Electrical and Electronic Engineering</h3>
+            <p class="org">Ahsanullah University of Science and Technology (AUST), Dhaka</p>
+            <span class="grade tnum">CGPA 3.75 / 4.00</span>
+            <p class="detail">Thesis: Low Power VLSI Circuit (SRAM) Design Using FinFET. Supervisor: Prof. Satyendra Nath Biswas, PhD.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">Jul 2014</span>
+          <div>
+            <h3>Higher Secondary Certificate (HSC), Science</h3>
+            <p class="org">Notre Dame College, Dhaka Board</p>
+            <span class="grade tnum">GPA 5.00 / 5.00</span>
+          </div>
+        </li>
+        <li>
+          <span class="when">Jul 2012</span>
+          <div>
+            <h3>Secondary School Certificate (SSC), Science</h3>
+            <p class="org">Dhanmondi Govt. Boys' High School, Dhaka Board</p>
+            <span class="grade tnum">GPA 5.00 / 5.00</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICE, TRAINING, AWARDS ===================== -->
+<section class="block" id="service">
+  <div class="wrap sec">
+    <div class="sec-head"><span class="label">Service</span><h2>Service, training and awards</h2></div>
+    <div class="sec-body">
+
+      <h3 class="subhead">Technical reviewer</h3>
+      <ul class="list">
+        <li><span class="when">Oct 2026</span><span class="what">iCACCESS: International Conference on Advances in Computing, Communication, Electrical, and Smart Systems<small>Dhaka</small></span></li>
+        <li><span class="when">Dec 2025</span><span class="what">ICCIT: International Conference on Computer and Information Technology<small>Cox's Bazar</small></span></li>
+        <li><span class="when">Dec 2024</span><span class="what">ICCIT: International Conference on Computer and Information Technology<small>Cox's Bazar</small></span></li>
+        <li><span class="when">Mar 2024</span><span class="what">iCACCESS: International Conference on Advances in Computing, Communication, Electrical, and Smart Systems<small>Dhaka</small></span></li>
+      </ul>
+
+      <h3 class="subhead">Workshops, presentations and leadership</h3>
+      <ul class="list">
+        <li><span class="when">Mar 2024</span><span class="what">Resource person, “Digital VLSI Circuit Design Essentials: Unleashing Creativity with Cadence Virtuoso Tool”<small>Department of EEE, ULAB, with ULAB Electronics and Robotics Club and IEEE RAS ULAB Student Branch Chapter</small></span></li>
+        <li><span class="when">Mar 2024</span><span class="what">Organizer, iCACCESS 2024<small>Dhaka</small></span></li>
+        <li><span class="when">2024 – 2025</span><span class="what">Advisor, ULAB Electronics and Robotics Club<small>May 2024 – July 2025</small></span></li>
+        <li><span class="when">Jan 2023</span><span class="what">Poster presentation, International Conference on Electronics and Informatics 2022<small>Bangladesh Electronics and Informatics Society, representing University of Scholars</small></span></li>
+        <li><span class="when">2022 – 2023</span><span class="what">Advisor, Robotics Club, University of Scholars<small>November 2022 – May 2023</small></span></li>
+        <li><span class="when">Apr 2022</span><span class="what">Paper presentation, IEEE I2CT 2022<small>Performance evaluation of 2×2 and massive 8×8 MIMO at 28 GHz and 60 GHz for Dhaka City</small></span></li>
+        <li><span class="when">Feb 2018</span><span class="what">Assistant Coordinator, MATLAB &amp; Image Processing Competition, Engenius 2018<small>Inter-university tech competition, AUST</small></span></li>
+      </ul>
+
+      <h3 class="subhead">Honours and awards</h3>
+      <ul class="list">
+        <li><span class="when">2018</span><span class="what">1st Runner-up, ROBORACE (line-following robot), Engenius 2018<small>Inter-university tech competition, AUST EEE Society</small></span></li>
+        <li><span class="when">2016</span><span class="what">1st Runner-up, Tech Idea Race 2016<small>Inter-university innovative idea writing competition, IEEE AUST Student Branch</small></span></li>
+        <li><span class="when">2014</span><span class="what">Perfect Attendance Award, Notre Dame College<small>Two-year course of study completed with perfect attendance</small></span></li>
+        <li><span class="when">2013 – 2014</span><span class="what">Participant, 11th and 12th Bangladesh Mathematical Olympiad and 2nd Bangladesh Physics Olympiad</span></li>
+      </ul>
+
+      <h3 class="subhead">Professional development</h3>
+      <ul class="list">
+        <li><span class="when">2025</span><span class="what">Induction Training for Tertiary Teachers (24 hours, four modules)<small>Center for Excellence in Teaching and Learning (CETL), ULAB</small></span></li>
+        <li><span class="when">2025</span><span class="what">Two-Day Training on Outcome-Based Education (OBE)<small>BAETE</small></span></li>
+        <li><span class="when">2023</span><span class="what">Certificate Course on Teaching for Active Learning<small>Foundation for Learning Teaching and Research</small></span></li>
+        <li><span class="when">2021</span><span class="what">Virtual BCI &amp; Neurotechnology Spring School (96 hours)<small>g.tec medical engineering GmbH, Austria</small></span></li>
+        <li><span class="when">2021</span><span class="what">Online Workshop on Quantum Systems Engineering for Scientists<small>IEEE Quantum</small></span></li>
+      </ul>
+      <details class="more">
+        <summary>Show all training and workshops</summary>
+        <ul class="list">
+          <li><span class="when">2023</span><span class="what">Short course on Planning and Design of Electrical Substation<small>Continuing Education Center, University of Scholars</small></span></li>
+          <li><span class="when">2022</span><span class="what">Training on Outcome-Based Curriculum and Accreditation Standards and Criteria<small>The International University of Scholars</small></span></li>
+          <li><span class="when">2021</span><span class="what">Machine Learning Master Class<small>Pantech Prolabs India Pvt Ltd</small></span></li>
+          <li><span class="when">2020 – 2021</span><span class="what">LinkedIn Learning courses<small>Learning FPGA Development; Raspberry Pi: GPIO; AutoCAD Electrical Essential Training; Learning Java; Programming Foundations: Object-Oriented Design; Learning SQL Programming</small></span></li>
+          <li><span class="when">2020</span><span class="what">CCNAv7 (Cisco Certified Network Associate, version 7)<small>American International University-Bangladesh</small></span></li>
+          <li><span class="when">2018</span><span class="what">Workshop on Writing Research Papers Using LaTeX<small>IEEE AUST Student Branch</small></span></li>
+          <li><span class="when">2017</span><span class="what">Workshop on Introduction to Basic TCAD<small>United International University</small></span></li>
+          <li><span class="when">2017</span><span class="what">Workshop on SolidWorks<small>AUST Innovation and Design Club</small></span></li>
+          <li><span class="when">2017</span><span class="what">PCB Designing Workshop for Beginners<small>WIE Affinity Group, IEEE Bangladesh Section, and BUET WIE Student Branch Affinity Group</small></span></li>
+          <li><span class="when">2017</span><span class="what">Workshop on Simulink<small>WIE Affinity Groups, IEEE AUST Student Branch and IEEE Bangladesh Section</small></span></li>
+          <li><span class="when">2016</span><span class="what">Training on AutoCAD 2D and 3D<small>CADD CORE Training Institute, Dhaka</small></span></li>
+          <li><span class="when">2016</span><span class="what">Web Programming Using PHP/MySQL<small>Institute of Information Technology, University of Dhaka</small></span></li>
+        </ul>
+      </details>
+
+      <h3 class="subhead">Professional memberships</h3>
+      <ul class="list">
+        <li><span class="when">2016 – 2025</span><span class="what">IEEE</span></li>
+        <li><span class="when">2023 – 2024</span><span class="what">IEEE Computer Society, Student Member</span></li>
+        <li><span class="when">2017 – 2018</span><span class="what">IEEE Power and Energy Society, Student Member</span></li>
+        <li><span class="when">2016 – 2018</span><span class="what">IEEE Women in Engineering (WIE), Student Member</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="label">Contact</span>
+    <h2>Interested in working together?</h2>
+    <p class="lead">I welcome conversations with faculty about PhD and research MSc opportunities in low-power VLSI, in-memory computing and related areas. Email is the best way to reach me.</p>
+    <div class="email-row">
+      <a class="email" href="mailto:shams.aoms@gmail.com">shams.aoms@gmail.com</a>
+      <button class="copy" id="copy-email" type="button" data-email="shams.aoms@gmail.com">Copy email</button>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <span class="label">Affiliation</span>
+        <p>Department of Electrical and Electronic Engineering<br>University of Liberal Arts Bangladesh (ULAB)<br>Dhaka, Bangladesh</p>
+      </div>
+      <div>
+        <span class="label">Profiles</span>
+        <ul>
+          <li><a href="https://scholar.google.com/citations?user=cvKcdi4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://orcid.org/0000-0003-1254-0381" target="_blank" rel="noopener">ORCID 0000-0003-1254-0381</a></li>
+          <li><a href="https://www.researchgate.net/profile/A-O-M-Shamsuddoha" target="_blank" rel="noopener">ResearchGate</a></li>
+          <li><a href="https://www.linkedin.com/in/aom-shamsuddoha" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="label">Documents</span>
+        <ul>
+          <li><a href="cv/AOM_Shamsuddoha_CV.pdf" target="_blank" rel="noopener">Curriculum vitae (PDF)</a></li>
+          <li>References available on request</li>
+          <li><a href="https://adscientificindex.com/scientist/aom-shamsuddoha/4950651/" target="_blank" rel="noopener">AD Scientific Index listing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap mono">
+    <span>© 2026 A. O. M. Shamsuddoha</span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Mobile menu
+  var btn=document.getElementById('menu-btn'),links=document.getElementById('nav-links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){var o=links.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu';});
+    links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}});
+  }
+  // Copy email
+  var c=document.getElementById('copy-email');
+  if(c){c.addEventListener('click',function(){
+    var t=c.getAttribute('data-email');
+    function done(){c.textContent='Copied';setTimeout(function(){c.textContent='Copy email';},1800);}
+    function fallback(){var r=document.createRange();var el=document.querySelector('.email');r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);c.textContent='Selected, press Ctrl+C';}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fallback);}else{fallback();}
+  });}
+  // Highlight current section in the nav
+  if('IntersectionObserver' in window){
+    var map={};document.querySelectorAll('.nav-links a').forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){Object.values(map).forEach(function(a){a.classList.remove('active');});var a=map[e.target.id];if(a)a.classList.add('active');}});},{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});
+  }
+})();
+</script>
+</body>
+</html>
