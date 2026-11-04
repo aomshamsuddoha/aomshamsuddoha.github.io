@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"A. O. M. Shamsuddoha","jobTitle":"Lecturer and Program Coordinator, Department of Electrical and Electronic Engineering","affiliation":{"@type":"CollegeOrUniversity","name":"University of Liberal Arts Bangladesh"},"email":"mailto:shams.aoms@gmail.com","url":"https://aomshamsuddoha.github.io/","sameAs":["https://www.linkedin.com/in/aom-shamsuddoha","https://scholar.google.com/citations?user=cvKcdi4AAAAJ","https://orcid.org/0000-0003-1254-0381","https://www.researchgate.net/profile/A-O-M-Shamsuddoha"]}
+{"@context":"https://schema.org","@type":"Person","name":"A. O. M. Shamsuddoha","jobTitle":"Lecturer and Program Coordinator, Department of Electrical and Electronic Engineering","affiliation":{"@type":"CollegeOrUniversity","name":"University of Liberal Arts Bangladesh"},"email":"mailto:shams.aoms@gmail.com","url":"https://aomshamsuddoha.github.io/","sameAs":["https://www.linkedin.com/in/aom-shamsuddoha","https://scholar.google.com/citations?user=cvKcdi4AAAAJ","https://orcid.org/0000-0003-1254-0381","https://www.scopus.com/authid/detail.uri?authorId=57439925500","https://www.webofscience.com/wos/author/record/PVC-9513-2026","https://www.researchgate.net/profile/A-O-M-Shamsuddoha","https://ulab.academia.edu/AOMShamsuddoha","https://ulab.edu.bd/faculty/a-o-m-shamsuddoha"]}
 </script>
 <style>
 /* Layout: Swiss 12-column grid. Each section = a 3-col label rail on the left + 9-col content on the right, separated by full-width hairlines. */
@@ -98,7 +98,7 @@ p{margin:0}
 .photo-frame{position:relative;aspect-ratio:4/5;max-width:100%;background:var(--surface);overflow:hidden}
 .photo-frame img{width:100%;height:100%;object-fit:cover}
 .photo-cap{margin-top:12px}
-.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(48px,6vw,72px);border-top:1px solid var(--rule)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(48px,6vw,72px);border-top:1px solid var(--rule)}
 .fact{padding:20px 20px 0 0;border-right:1px solid var(--rule);margin-right:20px}
 .fact:last-child{border-right:0;margin-right:0}
 .fact b{display:block;font-family:var(--font-display);font-size:var(--step-3);font-weight:600;letter-spacing:-.02em;line-height:1.1}
@@ -107,9 +107,9 @@ p{margin:0}
   .hero-grid{grid-template-columns:1fr}
   .hero-text,.hero-photo{grid-column:auto}
   .hero-photo{order:-1;max-width:200px}
-  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .fact:nth-child(2){border-right:0;margin-right:0}
-  .fact:nth-child(n+3){border-top:1px solid var(--rule);margin-top:20px}
+  .fact{padding-right:12px;margin-right:12px}
+  .fact b{font-size:var(--step-2)}
+  .fact span{font-size:.8125rem}
 }
 .profiles{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:28px;padding:0;list-style:none}
 .profiles a{font-size:.9375rem;color:var(--ink-2);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
@@ -134,16 +134,40 @@ section.block{border-bottom:1px solid var(--rule);padding-block:clamp(56px,7vw,9
 .prose p+p{margin-top:1.1em}
 .prose .muted{color:var(--ink-2)}
 
-/* Research interests */
-.interests{list-style:none;margin:0;padding:0;counter-reset:ri}
-.interests li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:22px 0;border-top:1px solid var(--rule)}
-.interests li:last-child{border-bottom:1px solid var(--rule)}
-.interests li::before{counter-increment:ri;content:counter(ri,decimal-leading-zero);font-family:var(--font-mono);font-size:.875rem;color:var(--ink-3);padding-top:4px}
-.interests li.core::before{color:var(--accent)}
-.interests h3{font-size:var(--step-2);font-weight:600;line-height:1.25}
-.interests p{margin-top:6px;color:var(--ink-2);max-width:62ch}
-.group-label{display:flex;justify-content:space-between;gap:16px;margin:0 0 10px}
-.group-label+.interests{margin-bottom:40px}
+/* Research interests: a computing stack, systems at the top, physics at the base */
+.research-lead{font-size:var(--step-1);line-height:1.6;max-width:62ch;margin-bottom:32px}
+.stack{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.layer{display:grid;grid-template-columns:168px minmax(0,1fr);gap:24px;border-bottom:1px solid var(--rule)}
+.layer-tag{position:relative;padding:24px 0 24px 26px}
+.layer-tag::before{content:"";position:absolute;left:4px;top:0;bottom:0;width:1px;background:var(--rule)}
+.layer:first-child .layer-tag::before{top:31px}
+.layer:last-child .layer-tag::before{bottom:calc(100% - 31px)}
+.layer-tag::after{content:"";position:absolute;left:0;top:27px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:1.5px solid var(--ink-3)}
+.layer.core .layer-tag::after{background:var(--accent);border-color:var(--accent)}
+.lvl{display:block;font-family:var(--font-mono);font-size:.8125rem;color:var(--ink-3);line-height:1.4}
+.layer.core .lvl{color:var(--accent)}
+.layer-tag .label{display:block;margin-top:4px;color:var(--ink-2)}
+.layer-body{padding:22px 0 24px;min-width:0}
+.layer-body h3{font-size:var(--step-2);font-weight:600;line-height:1.25}
+.layer-body p{margin-top:6px;color:var(--ink-2);max-width:62ch}
+.layer-body .note{display:inline-block;margin-top:10px;font-family:var(--font-mono);font-size:.75rem;letter-spacing:.03em;color:var(--accent)}
+.stack .tags{margin-top:12px}
+.applies{margin-top:40px}
+.applies>.label{display:block;margin-bottom:10px}
+.apps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px}
+.apps li{padding:16px 0;border-top:1px solid var(--rule)}
+.apps h4{margin:0;font-family:var(--font-display);font-size:var(--step-1);font-weight:600;line-height:1.3}
+.apps p{margin-top:4px;color:var(--ink-2);font-size:.9375rem}
+@media (max-width:640px){
+  .layer{grid-template-columns:1fr;gap:0}
+  .layer-tag{padding:20px 0 0 22px}
+  .layer-tag::before{display:none}
+  .layer-tag::after{top:24px}
+  .lvl,.layer-tag .label{display:inline;margin:0}
+  .lvl::after{content:"  ·  "}
+  .layer-body{padding-top:8px}
+  .apps{grid-template-columns:1fr}
+}
 
 /* Featured paper */
 .featured{background:var(--surface);border:1px solid var(--rule);padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px}
@@ -163,7 +187,13 @@ section.block{border-bottom:1px solid var(--rule);padding-block:clamp(56px,7vw,9
 .pub-group+.pub-group{margin-top:48px}
 .pub-group h3{font-size:var(--step-1);font-weight:600;margin-bottom:6px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .pubs{list-style:none;margin:0;padding:0}
-.pubs li{display:grid;grid-template-columns:52px minmax(0,1fr) 56px;gap:16px;padding:20px 0;border-top:1px solid var(--rule)}
+.pubs li{position:relative;overflow:hidden;display:grid;grid-template-columns:52px minmax(0,1fr) 56px;gap:16px;padding:20px 0;border-top:1px solid var(--rule)}
+.pubs li>:not(.pub-art){position:relative;z-index:1}
+.pub-art{position:absolute;right:72px;top:50%;width:190px;height:auto;transform:translateY(-50%);color:var(--accent);opacity:.11;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;z-index:0}
+.pubs li:hover .pub-art{opacity:.2;transition:opacity .2s}
+.feat-art{position:absolute;right:28px;bottom:24px;width:min(340px,48%);height:auto;color:var(--accent);opacity:.08;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.featured{position:relative;overflow:hidden}
+.featured>:not(.feat-art){position:relative;z-index:1}
 .pubs li:last-child{border-bottom:1px solid var(--rule)}
 .pubs .id{font-family:var(--font-mono);font-size:.8125rem;color:var(--ink-3);padding-top:3px}
 .pubs .yr{font-family:var(--font-mono);font-size:.8125rem;color:var(--ink-3);text-align:right;padding-top:3px}
@@ -176,7 +206,7 @@ section.block{border-bottom:1px solid var(--rule);padding-block:clamp(56px,7vw,9
 .pubs .links a:hover{text-decoration:underline}
 .chip{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.03em;padding:3px 8px;border:1px solid var(--rule);color:var(--ink-2)}
 .chip.first{border-color:var(--accent);color:var(--accent)}
-@media (max-width:600px){.pubs li{grid-template-columns:44px minmax(0,1fr)}.pubs .yr{grid-column:2;grid-row:1;text-align:left;padding-top:0}.pubs .id{grid-row:1 / span 2}}
+@media (max-width:600px){.pub-art{width:130px;right:-8px;opacity:.08}.feat-art{width:62%;right:12px;bottom:12px}.pubs li{grid-template-columns:44px minmax(0,1fr)}.pubs .yr{grid-column:2;grid-row:1;text-align:left;padding-top:0}.pubs .id{grid-row:1 / span 2}}
 
 /* Timeline (experience, education) */
 .timeline{list-style:none;margin:0;padding:0}
@@ -276,14 +306,14 @@ footer a{color:inherit}
         <p class="label"><span class="status-dot" aria-hidden="true"></span>Seeking PhD positions in Electrical &amp; Computer Engineering</p>
         <h1>A.&nbsp;O.&nbsp;M. Shamsuddoha</h1>
         <p class="role">Lecturer and Program Coordinator, Department of Electrical and Electronic Engineering, University of Liberal Arts Bangladesh</p>
-        <p class="thesis">I design energy-efficient circuits and want to rethink where computation happens. My research interests centre on <em>low-power VLSI</em>, <em>in-memory computing</em> and <em>computer architectures beyond von Neumann</em>.</p>
+        <p class="thesis">I want to make computers faster while using far less power. My research interests centre on <em>low-power VLSI</em>, <em>in-memory computing</em> and <em>brain-inspired architectures beyond von Neumann</em>, and the <em>device physics</em> that makes them practical to build.</p>
         <div class="cta">
           <a class="btn primary" href="cv/AOM_Shamsuddoha_CV.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
             Download CV
           </a>
           <a class="btn" href="#contact">Get in touch</a>
-          <a class="btn" href="https://scholar.google.com/citations?user=cvKcdi4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn" href="https://www.linkedin.com/in/aom-shamsuddoha" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
       <div class="hero-photo">
@@ -293,9 +323,8 @@ footer a{color:inherit}
     </div>
 
     <div class="facts tnum">
-      <div class="fact"><b>7</b><span>Peer-reviewed publications (IEEE)</span></div>
+      <div class="fact"><b>8</b><span>Peer-reviewed publications</span></div>
       <div class="fact"><b>~6 yrs</b><span>University teaching across four institutions</span></div>
-      <div class="fact"><b>4</b><span>Conference technical review assignments</span></div>
       <div class="fact"><b>8.0</b><span>IELTS Academic overall band (2024)</span></div>
     </div>
 
@@ -303,8 +332,9 @@ footer a{color:inherit}
     <ul class="profiles" aria-label="Research profiles">
       <li><a href="https://scholar.google.com/citations?user=cvKcdi4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
       <li><a href="https://orcid.org/0000-0003-1254-0381" target="_blank" rel="noopener">ORCID</a></li>
-      <li><a href="https://www.researchgate.net/profile/A-O-M-Shamsuddoha" target="_blank" rel="noopener">ResearchGate</a></li>
+      <li><a href="https://www.scopus.com/authid/detail.uri?authorId=57439925500" target="_blank" rel="noopener">Scopus</a></li>
       <li><a href="https://www.webofscience.com/wos/author/record/PVC-9513-2026" target="_blank" rel="noopener">Web of Science</a></li>
+      <li><a href="https://www.researchgate.net/profile/A-O-M-Shamsuddoha" target="_blank" rel="noopener">ResearchGate</a></li>
       <li><a href="https://www.linkedin.com/in/aom-shamsuddoha" target="_blank" rel="noopener">LinkedIn</a></li>
       <li><a href="https://ulab.academia.edu/AOMShamsuddoha" target="_blank" rel="noopener">Academia.edu</a></li>
       <li><a href="https://ulab.edu.bd/faculty/a-o-m-shamsuddoha" target="_blank" rel="noopener">ULAB faculty page</a></li>
@@ -317,9 +347,10 @@ footer a{color:inherit}
   <div class="wrap sec">
     <div class="sec-head"><span class="label">About</span><h2>Profile</h2></div>
     <div class="sec-body prose">
-      <p>I am a Lecturer in Electrical and Electronic Engineering at the University of Liberal Arts Bangladesh (ULAB) in Dhaka, where I have also served as Program Coordinator of the B.Sc. in EEE program since February 2025. Over nearly six years I have taught VLSI, solid-state devices, electronic circuits, power electronics and embedded systems at four universities.</p>
-      <p>My research began with my undergraduate thesis on low-power SRAM design using FinFETs. That work became my first-author paper, which combines adiabatic logic with FinFET-based SRAM to reduce power consumption. Since then I have co-authored seven peer-reviewed IEEE papers spanning circuit design, wireless communication, and machine learning for healthcare, often while mentoring undergraduate research teams.</p>
-      <p>I now want to commit to hardware research full time. I am looking for a PhD position in Electrical and Computer Engineering where I can work on low-power VLSI, in-memory computing and new transistor architectures. I bring hands-on experience with Cadence Virtuoso, Verilog and PSpice, and years of practice explaining circuits clearly.</p>
+      <p>My research goal is to make computers faster and far more energy efficient. Modern workloads, machine learning above all, spend much of their time and energy moving data between memory and processor. I am interested in hardware that removes this bottleneck through low-power circuit design, in-memory computing and architectures beyond the von Neumann model.</p>
+      <p>I also look to nature for direction. The human brain learns, recognises and reasons on roughly 20 watts, far less than the hardware we use for artificial intelligence today. Understanding how the brain computes, and mimicking it in silicon through neuromorphic design, is one of the most promising routes to efficient machines.</p>
+      <p>I am a Lecturer in Electrical and Electronic Engineering at the University of Liberal Arts Bangladesh (ULAB) in Dhaka, where I have also served as Program Coordinator of the B.Sc. in EEE program since February 2025. Over nearly six years I have taught VLSI, solid-state devices, electronic circuits, power electronics and embedded systems at four universities. My research began with my undergraduate thesis on low-power SRAM design using FinFETs, which became my first-author paper. Since then I have co-authored eight peer-reviewed publications, supervised several undergraduate capstone projects, including one on continual learning in spiking neural networks for neuromorphic vision, and served as a technical reviewer for international conferences.</p>
+      <p>I now want to commit to research full time and begin a PhD for deeper, more focused research experience. I am looking for a PhD position in Electrical and Computer Engineering where I can work on low-power VLSI, in-memory computing and beyond von Neumann computing architectures, along with the solid-state device physics and nanotechnology that underpin them. I am also interested, to a lesser extent, in biomedical and wearable electronics.</p>
     </div>
   </div>
 </section>
@@ -327,31 +358,66 @@ footer a{color:inherit}
 <!-- ===================== RESEARCH ===================== -->
 <section class="block" id="research">
   <div class="wrap sec">
-    <div class="sec-head"><span class="label">Research</span><h2>Research interests</h2></div>
+    <div class="sec-head"><span class="label">Research</span><h2>Research Interests</h2></div>
     <div class="sec-body">
-      <p class="group-label label"><span>Primary: hardware and computing</span><span>In order of priority</span></p>
-      <ol class="interests">
-        <li class="core"><div><h3>Low-power VLSI</h3><p>Circuit and device techniques that cut dynamic and leakage power in digital logic and memory, including FinFET-based design and adiabatic (energy-recovery) logic.</p></div></li>
-        <li class="core"><div><h3>In-memory computing</h3><p>Performing computation inside or beside memory arrays such as SRAM, to reduce the energy and delay spent moving data between memory and processor.</p></div></li>
-        <li class="core"><div><h3>Novel transistor architectures and semiconductor devices</h3><p>FinFET, gate-all-around and other emerging devices, and how their electrical behaviour shapes circuit and memory design.</p></div></li>
-        <li class="core"><div><h3>Beyond von Neumann computer architecture</h3><p>Architectures that loosen the separation between processing and memory to overcome the memory-wall bottleneck.</p></div></li>
-        <li class="core"><div><h3>Neuromorphic computing</h3><p>Brain-inspired hardware that uses spiking or analog computation for efficient learning and inference.</p></div></li>
+      <!-- Research stack: top = system level, bottom = device physics.
+           To add a topic, copy one <li class="layer"> block. -->
+      <p class="research-lead">One question connects all of my interests: how can we build computers that are faster and use far less energy? I approach it across the whole computing stack, from the physics of a single device up to the architecture of the complete system.</p>
+      <ol class="stack" aria-label="Research interests, from system level down to device physics">
+        <li class="layer core">
+          <div class="layer-tag"><span class="lvl">L4</span><span class="label">Architecture</span></div>
+          <div class="layer-body">
+            <h3>Beyond von Neumann and neuromorphic computing</h3>
+            <p>Architectures that bring memory and processing together to overcome the memory wall, including brain-inspired systems that compute with spiking neurons for fast, energy-efficient learning and inference.</p>
+            <ul class="tags"><li>Memory wall</li><li>Neuromorphic</li><li>Spiking neural networks</li></ul>
+          </div>
+        </li>
+        <li class="layer core">
+          <div class="layer-tag"><span class="lvl">L3</span><span class="label">Memory</span></div>
+          <div class="layer-body">
+            <h3>In-memory computing</h3>
+            <p>Performing computation inside or beside memory arrays such as SRAM, cutting the energy and delay of moving data. This matters most for data-heavy workloads such as machine learning.</p>
+            <ul class="tags"><li>Compute-in-memory</li><li>SRAM</li><li>ML accelerators</li></ul>
+          </div>
+        </li>
+        <li class="layer core">
+          <div class="layer-tag"><span class="lvl">L2</span><span class="label">Circuits</span></div>
+          <div class="layer-body">
+            <h3>Low-power VLSI</h3>
+            <p>Circuit techniques that cut dynamic and leakage power in digital logic and memory, including adiabatic (energy-recovery) logic and FinFET-based design.</p>
+            <ul class="tags"><li>Adiabatic logic</li><li>FinFET SRAM</li><li>Cadence Virtuoso</li></ul>
+            <span class="note">Where my research began: B.Sc. thesis and first-author paper</span>
+          </div>
+        </li>
+        <li class="layer core">
+          <div class="layer-tag"><span class="lvl">L1</span><span class="label">Devices and physics</span></div>
+          <div class="layer-body">
+            <h3>Solid-state devices and nanotechnology</h3>
+            <p>The solid-state physics of nanoscale and emerging transistors, such as FinFET and gate-all-around devices, and new materials and device concepts for future computing. Device behaviour sets the limits for every layer above it.</p>
+            <ul class="tags"><li>Solid-state physics</li><li>Nanoscale devices</li><li>Emerging transistors</li></ul>
+          </div>
+        </li>
       </ol>
-      <p class="group-label label"><span>Applications</span></p>
-      <ol class="interests" start="6" style="counter-reset:ri 5">
-        <li><div><h3>Biomedical engineering</h3><p>Signal and image analysis for healthcare, building on my co-authored work on EEG-based seizure detection and brain tumour classification in MRI.</p></div></li>
-        <li><div><h3>Wearable electronics</h3><p>Body-worn sensing systems, where circuit-level energy efficiency directly sets battery life and usability.</p></div></li>
-      </ol>
+
+      <div class="applies">
+        <span class="label">Where this work applies</span>
+        <ul class="apps">
+          <li><h4>Machine-learning hardware</h4><p>Faster, more energy-efficient chips for training and inference.</p></li>
+          <li><h4>Biomedical electronics</h4><p>Low-power hardware for health monitoring, building on my co-authored work on EEG and MRI analysis.</p></li>
+          <li><h4>Wearable electronics</h4><p>Body-worn devices, where energy efficiency directly sets battery life.</p></li>
+        </ul>
+      </div>
 
       <!-- Featured publication -->
       <p class="label" style="margin:56px 0 14px">Featured publication</p>
       <article class="featured">
+        <svg class="feat-art" viewBox="0 0 200 120" aria-hidden="true" focusable="false"><path d="M22 8V114M178 8V114M8 20H192"/><rect x="36" y="44" width="16" height="12"/><rect x="148" y="44" width="16" height="12"/><path d="M44 44V20M156 44V20M22 50H36M52 50H74M178 50H164M148 50H128"/><path d="M76 34V66L106 50Z"/><circle cx="110" cy="50" r="4"/><path d="M124 70V102L94 86Z"/><circle cx="90" cy="86" r="4"/><path d="M114 50H128V86H124M86 86H66V50"/></svg>
         <div>
-          <span class="label">First-author · Based on my B.Sc. thesis</span>
+          <span class="label">My first paper as first author · Based on my B.Sc. thesis</span>
           <h3>Design and Performance Analysis of SRAM Circuit Using Adiabatic Logic with FinFET</h3>
           <p class="authors"><b>A. O. M. Shamsuddoha</b>, M. K. Islam and S. N. Biswas</p>
           <p class="venue">2021 International Conference on Electronics, Communications and Information Technology (ICECIT), Bangladesh, pp. 1–4</p>
-          <p class="why">This paper applies adiabatic (energy-recovery) logic to an SRAM cell built with FinFET devices and analyses the resulting power and performance. It grew out of my undergraduate thesis, supervised by Prof. Satyendra Nath Biswas, and it is the work most closely aligned with the research I want to pursue in my PhD.</p>
+          <p class="why">This paper applies adiabatic (energy-recovery) logic to an SRAM cell built with FinFET devices and analyses the resulting power and performance. It grew out of my undergraduate thesis, supervised by Prof. Satyendra Nath Biswas. It is special to me as my first paper as first author, and it remains the work most closely aligned with the research I want to pursue in my PhD.</p>
           <ul class="tags"><li>SRAM</li><li>FinFET</li><li>Adiabatic logic</li><li>Low-power design</li><li>Cadence Virtuoso</li></ul>
         </div>
         <div class="actions">
@@ -368,14 +434,26 @@ footer a{color:inherit}
      Put your own name inside <b> ... </b>.  -->
 <section class="block" id="publications">
   <div class="wrap sec">
-    <div class="sec-head"><span class="label">Publications</span><h2>Peer-reviewed work</h2></div>
+    <div class="sec-head"><span class="label">Publications</span><h2>Peer-Reviewed Work</h2></div>
     <div class="sec-body">
 
       <div class="pub-group">
-        <h3>Journal articles <span class="label">1</span></h3>
+        <h3>Journal Articles <span class="label">2</span></h3>
         <ol class="pubs">
           <li>
+            <svg class="pub-art" viewBox="0 0 200 120" aria-hidden="true" focusable="false"><path d="M100 112V44"/><path d="M100 78C80 70 68 56 70 38C88 42 100 58 100 78Z"/><path d="M100 64C118 56 130 42 128 26C110 30 100 46 100 64Z"/><path d="M100 94C84 90 74 80 74 68C90 70 100 80 100 94Z"/><path d="M10 104C60 104 78 30 120 28S172 92 192 98" stroke-dasharray="3 4"/><path d="M8 112H192"/></svg>
             <span class="id">J1</span>
+            <div>
+              <p class="t">PHTF-Select: Phenology Aware Hurdle Foundation Modelling for Uncertainty Guided Crop Screening</p>
+              <p class="a">S. H. M. Atul, M. I. Hasan, S. E. Arafat, M. S. Islam, M. Hasan, A. O. Alfatha, F. Sultana and <b>A. O. M. Shamsuddoha</b></p>
+              <p class="v">Natural Resources for Human Health, vol. 6, no. 19S, pp. 1106–1131</p>
+              <div class="links"><a href="https://doi.org/10.53365/nrfhh.4052" target="_blank" rel="noopener">doi:10.53365/nrfhh.4052</a></div>
+            </div>
+            <span class="yr">2026</span>
+          </li>
+          <li>
+            <svg class="pub-art" viewBox="0 0 200 120" aria-hidden="true" focusable="false"><polyline points="8,30.6 11,30.1 14,31.3 17,30.2 20,25.6 23,22.7 26,24.1 29,26.5 32,26.3 35,26.1 38,29.4 41,33.3 44,33.1 47,29.8 50,28.2 53,28.7 56,27.3 59,23.5 62,22.1 65,25.3 68,28.7 71,29.0 74,28.8 77,31.3 80,33.7 83,31.7 86,27.3 89,25.4 92,26.3 95,25.7 98,23.3 101,23.7 104,28.0 107,31.6 110,31.1 113,30.0 116,31.2 119,32.1 122,28.9 125,24.3 128,23.4 131,25.5 134,26.1 137,25.0 140,26.5 143,31.0 146,33.6 149,31.7 152,29.2 155,29.3 158,29.3 161,26.0 164,22.4 167,23.1 170,26.7 173,28.3 176,27.7 179,29.2 182,32.8 185,33.7 188,30.1 191,26.7"/><polyline points="8,56.5 11,56.8 14,56.8 17,54.2 20,50.8 23,50.3 26,53.3 29,56.3 32,56.8 35,56.3 38,57.8 41,60.8 44,61.7 47,58.8 50,55.1 53,53.7 56,54.5 59,54.1 62,51.9 65,50.8 68,53.2 71,57.4 74,59.5 77,58.7 80,58.0 83,59.2 86,60.4 89,58.5 92,54.3 95,51.5 98,52.1 101,53.9 104,53.8 107,52.8 110,53.9 113,57.9 116,53.8 119,42.5 122,43.6 125,53.5 128,57.8 131,57.3 134,54.1 137,50.6 140,50.6 143,53.5 146,55.8 149,55.7 152,55.6 155,57.9 158,61.2 161,61.7 164,58.7 167,55.4 170,54.7 173,55.3 176,54.1 179,51.3 182,50.4 185,53.3 188,57.2 191,58.7"/><polyline points="8,83.3 11,81.7 14,78.5 17,80.0 20,84.9 23,86.7 26,85.7 29,87.1 32,89.0 35,86.0 38,81.0 41,80.4 44,82.0 47,80.8 50,80.2 53,84.4 56,88.7 59,87.8 62,85.7 65,86.5 68,86.0 71,81.3 74,78.4 77,80.7 80,83.1 83,82.6 86,84.0 89,88.5 92,89.7 95,85.9 98,83.6 101,84.1 104,82.3 107,78.5 110,79.3 113,83.9 116,85.8 119,76.1 122,68.9 125,80.5 128,87.0 131,82.0 134,81.1 137,82.2 140,80.5 143,79.4 146,83.3 149,87.9 152,87.6 155,86.0 158,87.2 161,87.0 164,82.3 167,78.8 170,80.6 173,82.5 176,81.7 179,83.0 182,87.8 185,89.7 188,86.5 191,84.4"/><polyline points="8,109.3 11,109.2 14,109.7 17,108.1 20,105.0 23,103.6 26,105.4 29,107.4 32,107.6 35,107.4 38,109.2 41,111.9 44,112.2 47,109.7 50,107.5 53,107.4 56,107.5 59,105.8 62,103.8 65,104.5 68,107.6 71,109.7 74,109.4 77,109.2 80,110.7 83,111.9 86,110.2 89,106.9 92,105.2 95,106.0 98,106.5 101,105.3 104,104.9 107,107.3 110,110.6 113,111.5 116,110.1 119,109.4 122,110.2 125,109.9 128,107.2 131,104.3 134,104.3 137,106.3 140,107.2 143,106.7 146,107.4 149,110.2 152,112.4 155,111.4 158,108.9 161,107.9 164,108.3 167,107.4 170,104.8 173,103.5 176,105.5 179,108.3 182,109.1 185,108.6 188,109.6 191,111.7"/><path d="M112 12V118" stroke-dasharray="2 4"/></svg>
+            <span class="id">J2</span>
             <div>
               <p class="t">SleepingEdge: Real-Time Sleep-Stage-Driven Epileptic Seizure Detection Using HMM and Hybrid OptiNet-SVM</p>
               <p class="a">M. Sakib, G. Hossain, T. Mahmud, A. Al Hasan, M. Nafis, M. Y. Hossain, N. M. Chisty, M. M. Mahmud, <b>A. O. M. Shamsuddoha</b> and M. M. Hossain</p>
@@ -388,9 +466,10 @@ footer a{color:inherit}
       </div>
 
       <div class="pub-group">
-        <h3>Conference papers <span class="label">6</span></h3>
+        <h3>Conference Papers <span class="label">6</span></h3>
         <ol class="pubs">
           <li>
+            <svg class="pub-art" viewBox="0 0 200 120" aria-hidden="true" focusable="false"><path d="M100 18C62 18 38 40 38 66C38 92 60 108 100 108C140 108 162 92 162 66C162 40 138 18 100 18Z"/><path d="M100 18V108"/><path d="M58 44C68 50 66 60 76 62M54 74C66 74 70 84 80 86M142 44C132 50 134 60 124 62M146 74C134 74 130 84 120 86"/><circle cx="128" cy="58" r="9" stroke-dasharray="3 3"/><path d="M137 58H182M182 52V64"/></svg>
             <span class="id">C1</span>
             <div>
               <p class="t">An Efficient and Interpretable Hybrid FCM-ELM Framework with Entropy-Guided Feature Selection for Multiclass Brain Tumor MRI Segmentation and Classification</p>
@@ -401,6 +480,7 @@ footer a{color:inherit}
             <span class="yr">2026</span>
           </li>
           <li>
+            <svg class="pub-art" viewBox="0 0 200 120" aria-hidden="true" focusable="false"><path d="M44 72L100 30L156 72V112H44Z"/><path d="M88 112V86H112V112"/><rect x="58" y="78" width="16" height="14"/><rect x="126" y="78" width="16" height="14"/><path d="M86 18A20 20 0 0 1 114 18M78 10A32 32 0 0 1 122 10"/><circle cx="100" cy="22" r="2"/></svg>
             <span class="id">C2</span>
             <div>
               <p class="t">A Low-Cost IoT-Based Smart Home Automation and Security System with Energy-Efficient Operation for Sustainable Living in Developing Regions</p>
@@ -411,6 +491,7 @@ footer a{color:inherit}
             <span class="yr">2026</span>
           </li>
           <li>
+            <svg class="pub-art" viewBox="0 0 200 120" aria-hidden="true" focusable="false"><path d="M14 30L38 22V98L14 106Z"/><path d="M52 38L72 32V88L52 94Z"/><path d="M58 34L78 28V84L58 90Z"/><path d="M92 46L106 42V78L92 82Z"/><path d="M97 44L111 40V76L97 80Z"/><path d="M102 42L116 38V74L102 78Z"/><path d="M134 50V74M142 46V78M150 52V72"/><path d="M168 40V84"/><circle cx="168" cy="44" r="3"/><circle cx="168" cy="62" r="3"/><circle cx="168" cy="80" r="3"/><path d="M40 62H50M80 60H90M118 60H130M154 62H164"/></svg>
             <span class="id">C3</span>
             <div>
               <p class="t">Detection and Classification of Poultry Diseases Using Deep Convolutional Neural Networks: A Ten-Class Image-Based Approach</p>
@@ -421,6 +502,7 @@ footer a{color:inherit}
             <span class="yr">2025</span>
           </li>
           <li>
+            <svg class="pub-art" viewBox="0 0 200 120" aria-hidden="true" focusable="false"><path d="M34 34H128L140 46V68H34Z"/><path d="M140 52L170 40V74L140 62"/><path d="M80 68V84M62 84H98"/><path d="M14 96H186M14 112H186"/><path d="M30 96V112M58 96V112M86 96V112M114 96V112M142 96V112M170 96V112"/><circle cx="58" cy="51" r="6"/></svg>
             <span class="id">C4</span>
             <div>
               <p class="t">Violence Detection: A Multi-Model Approach Towards Automated Video Surveillance and Public Safety</p>
@@ -431,16 +513,18 @@ footer a{color:inherit}
             <span class="yr">2024</span>
           </li>
           <li>
+            <svg class="pub-art" viewBox="0 0 200 120" aria-hidden="true" focusable="false"><path d="M18 40V28M13 22L18 28L23 22"/><path d="M18 62V50M13 44L18 50L23 44"/><path d="M18 84V72M13 66L18 72L23 66"/><path d="M18 106V94M13 88L18 94L23 88"/><path d="M36 40V28M31 22L36 28L41 22"/><path d="M36 62V50M31 44L36 50L41 44"/><path d="M36 84V72M31 66L36 72L41 66"/><path d="M36 106V94M31 88L36 94L41 88"/><path d="M164 40V28M159 22L164 28L169 22"/><path d="M164 62V50M159 44L164 50L169 44"/><path d="M164 84V72M159 66L164 72L169 66"/><path d="M164 106V94M159 88L164 94L169 88"/><path d="M182 40V28M177 22L182 28L187 22"/><path d="M182 62V50M177 44L182 50L187 44"/><path d="M182 84V72M177 66L182 72L187 66"/><path d="M182 106V94M177 88L182 94L187 88"/><path d="M46 34C80 20 120 20 154 34M46 58C80 50 120 50 154 58M46 82C80 90 120 90 154 82" stroke-dasharray="3 4"/></svg>
             <span class="id">C5</span>
             <div>
               <p class="t">Performance Evaluation of 2×2 and Massive 8×8 MIMO at 28 GHz and 60 GHz for Dhaka City</p>
               <p class="a">S. J. Hamim, M. K. Islam, <b>A. O. M. Shamsuddoha</b>, S. Dhar and A. K. M. Baki</p>
               <p class="v">IEEE 7th International Conference for Convergence in Technology (I2CT), pp. 1–5</p>
-              <div class="links"><a href="https://doi.org/10.1109/I2CT54291.2022.9825246" target="_blank" rel="noopener">doi:10.1109/I2CT54291.2022.9825246</a><span class="chip">Presented by me</span></div>
+              <div class="links"><a href="https://doi.org/10.1109/I2CT54291.2022.9825246" target="_blank" rel="noopener">doi:10.1109/I2CT54291.2022.9825246</a></div>
             </div>
             <span class="yr">2022</span>
           </li>
           <li>
+            <svg class="pub-art" viewBox="0 0 200 120" aria-hidden="true" focusable="false"><path d="M22 8V114M178 8V114M8 20H192"/><rect x="36" y="44" width="16" height="12"/><rect x="148" y="44" width="16" height="12"/><path d="M44 44V20M156 44V20M22 50H36M52 50H74M178 50H164M148 50H128"/><path d="M76 34V66L106 50Z"/><circle cx="110" cy="50" r="4"/><path d="M124 70V102L94 86Z"/><circle cx="90" cy="86" r="4"/><path d="M114 50H128V86H124M86 86H66V50"/></svg>
             <span class="id">C6</span>
             <div>
               <p class="t">Design and Performance Analysis of SRAM Circuit Using Adiabatic Logic with FinFET</p>
@@ -460,7 +544,7 @@ footer a{color:inherit}
 <!-- ===================== EXPERIENCE ===================== -->
 <section class="block" id="experience">
   <div class="wrap sec">
-    <div class="sec-head"><span class="label">Experience</span><h2>Academic appointments</h2></div>
+    <div class="sec-head"><span class="label">Experience</span><h2>Academic Appointments</h2></div>
     <div class="sec-body">
       <ol class="timeline">
         <li>
@@ -472,7 +556,8 @@ footer a{color:inherit}
               <li>Plan semester course offerings and class routines, and assign teaching assistants</li>
               <li>Form capstone project groups and organise moderation of examination questions</li>
               <li>Prepare the department's ISO certification and SDG reports</li>
-              <li>Coordinate academic meetings, including continuous quality improvement (CQI) sessions, and advise students</li>
+              <li>Coordinate departmental academic meetings and continuous quality improvement (CQI) sessions</li>
+              <li>Serve as the department's central point of contact for academic matters, liaising with university offices and other departments</li>
             </ul>
           </div>
         </li>
@@ -511,13 +596,21 @@ footer a{color:inherit}
         </li>
       </ol>
 
-      <h3 class="subhead">Technical skills</h3>
+      <!-- Supervision: copy an <li> to add a project -->
+      <h3 class="subhead">Undergraduate Project Supervision</h3>
+      <p class="detail" style="color:var(--ink-2);margin-bottom:12px;max-width:64ch">I have supervised several undergraduate capstone projects. Two prominent examples:</p>
+      <ul class="list">
+        <li><span class="when">Capstone</span><span class="what">Continual Learning in Supervised Spiking Neural Networks (SNNs) for Neuromorphic Vision</span></li>
+        <li><span class="when">Capstone</span><span class="what">Bypass Battery Management Architecture for Second-Life and Heterogeneous Battery Systems</span></li>
+      </ul>
+
+      <h3 class="subhead">Technical Skills</h3>
       <div class="skills">
         <div class="skill"><span class="label">VLSI design</span><p>Cadence Virtuoso, Microwind</p></div>
-        <div class="skill"><span class="label">Circuit simulation</span><p>OrCAD PSpice, Proteus, Quartus II</p></div>
-        <div class="skill"><span class="label">Programming and HDL</span><p>Verilog, MATLAB, C++, PHP, HTML</p></div>
-        <div class="skill"><span class="label">Design and documentation</span><p>AutoCAD, Tinkercad, LaTeX, Microsoft Office</p></div>
-        <div class="skill"><span class="label">Languages</span><p>Bengali (native), English (IELTS Academic 8.0), Hindi (basic)</p></div>
+        <div class="skill"><span class="label">Circuit simulation</span><p>Cadence (OrCAD) PSpice, Proteus, Quartus II</p></div>
+        <div class="skill"><span class="label">Programming and HDL</span><p>Verilog, MATLAB, C++, Python</p></div>
+        <div class="skill"><span class="label">Design tools</span><p>AutoCAD, Tinkercad</p></div>
+        <div class="skill"><span class="label">Languages</span><p>Bengali (native), English (IELTS Academic 8.0, 2024), Hindi, German and Arabic (basic)</p></div>
       </div>
     </div>
   </div>
@@ -534,7 +627,7 @@ footer a{color:inherit}
           <div>
             <h3>M.Sc. in Electrical and Electronic Engineering</h3>
             <p class="org">Ahsanullah University of Science and Technology (AUST), Dhaka</p>
-            <span class="grade tnum">CGPA 3.50 / 4.00</span>
+            <span class="grade tnum">CGPA 3.50 / 4.00 (80%–89% marks)</span>
           </div>
         </li>
         <li>
@@ -542,7 +635,7 @@ footer a{color:inherit}
           <div>
             <h3>B.Sc. in Electrical and Electronic Engineering</h3>
             <p class="org">Ahsanullah University of Science and Technology (AUST), Dhaka</p>
-            <span class="grade tnum">CGPA 3.75 / 4.00</span>
+            <span class="grade tnum">CGPA 3.75 / 4.00 (75%–79% marks)</span>
             <p class="detail">Thesis: Low Power VLSI Circuit (SRAM) Design Using FinFET. Supervisor: Prof. Satyendra Nath Biswas, PhD.</p>
           </div>
         </li>
@@ -551,7 +644,7 @@ footer a{color:inherit}
           <div>
             <h3>Higher Secondary Certificate (HSC), Science</h3>
             <p class="org">Notre Dame College, Dhaka Board</p>
-            <span class="grade tnum">GPA 5.00 / 5.00</span>
+            <span class="grade tnum">GPA 5.00 / 5.00 (above 80% marks)</span>
           </div>
         </li>
         <li>
@@ -559,7 +652,7 @@ footer a{color:inherit}
           <div>
             <h3>Secondary School Certificate (SSC), Science</h3>
             <p class="org">Dhanmondi Govt. Boys' High School, Dhaka Board</p>
-            <span class="grade tnum">GPA 5.00 / 5.00</span>
+            <span class="grade tnum">GPA 5.00 / 5.00 (above 80% marks)</span>
           </div>
         </li>
       </ol>
@@ -570,68 +663,75 @@ footer a{color:inherit}
 <!-- ===================== SERVICE, TRAINING, AWARDS ===================== -->
 <section class="block" id="service">
   <div class="wrap sec">
-    <div class="sec-head"><span class="label">Service</span><h2>Service, training and awards</h2></div>
+    <div class="sec-head"><span class="label">Service</span><h2>Service, Training and Awards</h2></div>
     <div class="sec-body">
 
-      <h3 class="subhead">Technical reviewer</h3>
+      <h3 class="subhead">Technical Reviewer</h3>
       <ul class="list">
-        <li><span class="when">Oct 2026</span><span class="what">iCACCESS: International Conference on Advances in Computing, Communication, Electrical, and Smart Systems<small>Dhaka</small></span></li>
+        <li><span class="when">Oct 2026</span><span class="what">iCACCESS: International Conference on Advances in Computing, Communication, Electrical, and Smart Systems<small>ULAB Campus, Dhaka, Bangladesh</small></span></li>
         <li><span class="when">Dec 2025</span><span class="what">ICCIT: International Conference on Computer and Information Technology<small>Cox's Bazar</small></span></li>
         <li><span class="when">Dec 2024</span><span class="what">ICCIT: International Conference on Computer and Information Technology<small>Cox's Bazar</small></span></li>
-        <li><span class="when">Mar 2024</span><span class="what">iCACCESS: International Conference on Advances in Computing, Communication, Electrical, and Smart Systems<small>Dhaka</small></span></li>
+        <li><span class="when">Mar 2024</span><span class="what">iCACCESS: International Conference on Advances in Computing, Communication, Electrical, and Smart Systems<small>ULAB Campus, Dhaka, Bangladesh</small></span></li>
       </ul>
 
-      <h3 class="subhead">Workshops, presentations and leadership</h3>
+      <h3 class="subhead">Workshops, Presentations and Leadership</h3>
       <ul class="list">
+        <li><span class="when">Oct 2026</span><span class="what">Organiser, iCACCESS 2026<small>2nd International Conference on Advances in Computing, Communication, Electrical, and Smart Systems · ULAB Campus, Dhaka, Bangladesh</small></span></li>
         <li><span class="when">Mar 2024</span><span class="what">Resource person, “Digital VLSI Circuit Design Essentials: Unleashing Creativity with Cadence Virtuoso Tool”<small>Department of EEE, ULAB, with ULAB Electronics and Robotics Club and IEEE RAS ULAB Student Branch Chapter</small></span></li>
-        <li><span class="when">Mar 2024</span><span class="what">Organizer, iCACCESS 2024<small>Dhaka</small></span></li>
+        <li><span class="when">Mar 2024</span><span class="what">Organiser, iCACCESS 2024<small>International Conference on Advances in Computing, Communication, Electrical, and Smart Systems · ULAB Campus, Dhaka, Bangladesh</small></span></li>
         <li><span class="when">2024 – 2025</span><span class="what">Advisor, ULAB Electronics and Robotics Club<small>May 2024 – July 2025</small></span></li>
         <li><span class="when">Jan 2023</span><span class="what">Poster presentation, International Conference on Electronics and Informatics 2022<small>Bangladesh Electronics and Informatics Society, representing University of Scholars</small></span></li>
         <li><span class="when">2022 – 2023</span><span class="what">Advisor, Robotics Club, University of Scholars<small>November 2022 – May 2023</small></span></li>
-        <li><span class="when">Apr 2022</span><span class="what">Paper presentation, IEEE I2CT 2022<small>Performance evaluation of 2×2 and massive 8×8 MIMO at 28 GHz and 60 GHz for Dhaka City</small></span></li>
         <li><span class="when">Feb 2018</span><span class="what">Assistant Coordinator, MATLAB &amp; Image Processing Competition, Engenius 2018<small>Inter-university tech competition, AUST</small></span></li>
       </ul>
 
-      <h3 class="subhead">Honours and awards</h3>
+      <h3 class="subhead">Honours and Awards</h3>
       <ul class="list">
         <li><span class="when">2018</span><span class="what">1st Runner-up, ROBORACE (line-following robot), Engenius 2018<small>Inter-university tech competition, AUST EEE Society</small></span></li>
-        <li><span class="when">2016</span><span class="what">1st Runner-up, Tech Idea Race 2016<small>Inter-university innovative idea writing competition, IEEE AUST Student Branch</small></span></li>
-        <li><span class="when">2014</span><span class="what">Perfect Attendance Award, Notre Dame College<small>Two-year course of study completed with perfect attendance</small></span></li>
+        <li><span class="when">2016</span><span class="what">1st Runner-up, Tech Idea Race 2016<small>Innovative idea writing competition, IEEE AUST Student Branch</small></span></li>
+        <li><span class="when">2014</span><span class="what">Perfect Attendance Award, Notre Dame College<small>For over 98% class attendance</small></span></li>
+      </ul>
+
+      <h3 class="subhead">Student Projects and Competitions</h3>
+      <ul class="list">
+        <li><span class="when">Jul 2018</span><span class="what">Microcontroller-based DC to AC converter<small>Power Electronics Lab</small></span></li>
+        <li><span class="when">Feb 2018</span><span class="what">Digital door lock system in Proteus<small>Digital Electronics II Lab</small></span></li>
+        <li><span class="when">Jan 2018</span><span class="what">4-bit up/down synchronous counter in Cadence<small>VLSI I Lab</small></span></li>
+        <li><span class="when">Oct 2017</span><span class="what">Participant, IEEEXtreme 11.0 Programming Competition</span></li>
+        <li><span class="when">Jun 2016</span><span class="what">Smoke detection system with protection<small>Measurement and Instrumentation Lab</small></span></li>
+        <li><span class="when">Apr 2016</span><span class="what">Home automation with GPS<small>EEE Fest 2016, intra-university project competition</small></span></li>
         <li><span class="when">2013 – 2014</span><span class="what">Participant, 11th and 12th Bangladesh Mathematical Olympiad and 2nd Bangladesh Physics Olympiad</span></li>
       </ul>
 
-      <h3 class="subhead">Professional development</h3>
+      <h3 class="subhead">Professional Development</h3>
       <ul class="list">
-        <li><span class="when">2025</span><span class="what">Induction Training for Tertiary Teachers (24 hours, four modules)<small>Center for Excellence in Teaching and Learning (CETL), ULAB</small></span></li>
-        <li><span class="when">2025</span><span class="what">Two-Day Training on Outcome-Based Education (OBE)<small>BAETE</small></span></li>
-        <li><span class="when">2023</span><span class="what">Certificate Course on Teaching for Active Learning<small>Foundation for Learning Teaching and Research</small></span></li>
-        <li><span class="when">2021</span><span class="what">Virtual BCI &amp; Neurotechnology Spring School (96 hours)<small>g.tec medical engineering GmbH, Austria</small></span></li>
-        <li><span class="when">2021</span><span class="what">Online Workshop on Quantum Systems Engineering for Scientists<small>IEEE Quantum</small></span></li>
+        <li><span class="when">Fall 2025</span><span class="what">Induction Training for Tertiary Teachers (24 hours, four modules)<small>Center for Excellence in Teaching and Learning (CETL), ULAB</small></span></li>
+        <li><span class="when">May 2025</span><span class="what">Two-Day Training on Outcome-Based Education (OBE)<small>BAETE</small></span></li>
+        <li><span class="when">Sep 2023</span><span class="what">Certificate Course on Teaching for Active Learning<small>Foundation for Learning Teaching and Research</small></span></li>
+        <li><span class="when">Jan 2023</span><span class="what">Short course on Planning and Design of Electrical Substation<small>Continuing Education Center, University of Scholars</small></span></li>
+        <li><span class="when">Apr 2022</span><span class="what">Training on Outcome-Based Curriculum and Accreditation Standards and Criteria<small>The International University of Scholars</small></span></li>
+        <li><span class="when">Apr 2021</span><span class="what">Virtual BCI &amp; Neurotechnology Spring School<small>g.tec medical engineering GmbH, Austria</small></span></li>
+        <li><span class="when">2020</span><span class="what">CCNAv7 (Cisco Certified Network Associate, version 7)<small>American International University-Bangladesh, March – November 2020</small></span></li>
+        <li><span class="when">Aug 2017</span><span class="what">Workshop on Introduction to Basic TCAD<small>United International University</small></span></li>
+        <li><span class="when">2016</span><span class="what">Training on Web Programming Using PHP/MySQL<small>Institute of Information Technology, University of Dhaka, May – July 2016</small></span></li>
       </ul>
       <details class="more">
-        <summary>Show all training and workshops</summary>
+        <summary>Show other workshops and online courses</summary>
         <ul class="list">
-          <li><span class="when">2023</span><span class="what">Short course on Planning and Design of Electrical Substation<small>Continuing Education Center, University of Scholars</small></span></li>
-          <li><span class="when">2022</span><span class="what">Training on Outcome-Based Curriculum and Accreditation Standards and Criteria<small>The International University of Scholars</small></span></li>
+          <li><span class="when">2021</span><span class="what">Online Workshop on Quantum Systems Engineering for Scientists<small>IEEE Quantum</small></span></li>
           <li><span class="when">2021</span><span class="what">Machine Learning Master Class<small>Pantech Prolabs India Pvt Ltd</small></span></li>
           <li><span class="when">2020 – 2021</span><span class="what">LinkedIn Learning courses<small>Learning FPGA Development; Raspberry Pi: GPIO; AutoCAD Electrical Essential Training; Learning Java; Programming Foundations: Object-Oriented Design; Learning SQL Programming</small></span></li>
-          <li><span class="when">2020</span><span class="what">CCNAv7 (Cisco Certified Network Associate, version 7)<small>American International University-Bangladesh</small></span></li>
           <li><span class="when">2018</span><span class="what">Workshop on Writing Research Papers Using LaTeX<small>IEEE AUST Student Branch</small></span></li>
-          <li><span class="when">2017</span><span class="what">Workshop on Introduction to Basic TCAD<small>United International University</small></span></li>
           <li><span class="when">2017</span><span class="what">Workshop on SolidWorks<small>AUST Innovation and Design Club</small></span></li>
           <li><span class="when">2017</span><span class="what">PCB Designing Workshop for Beginners<small>WIE Affinity Group, IEEE Bangladesh Section, and BUET WIE Student Branch Affinity Group</small></span></li>
           <li><span class="when">2017</span><span class="what">Workshop on Simulink<small>WIE Affinity Groups, IEEE AUST Student Branch and IEEE Bangladesh Section</small></span></li>
           <li><span class="when">2016</span><span class="what">Training on AutoCAD 2D and 3D<small>CADD CORE Training Institute, Dhaka</small></span></li>
-          <li><span class="when">2016</span><span class="what">Web Programming Using PHP/MySQL<small>Institute of Information Technology, University of Dhaka</small></span></li>
         </ul>
       </details>
 
-      <h3 class="subhead">Professional memberships</h3>
+      <h3 class="subhead">Professional Memberships</h3>
       <ul class="list">
-        <li><span class="when">2016 – 2025</span><span class="what">IEEE</span></li>
-        <li><span class="when">2023 – 2024</span><span class="what">IEEE Computer Society, Student Member</span></li>
-        <li><span class="when">2017 – 2018</span><span class="what">IEEE Power and Energy Society, Student Member</span></li>
-        <li><span class="when">2016 – 2018</span><span class="what">IEEE Women in Engineering (WIE), Student Member</span></li>
+        <li><span class="when">2016 – 2025</span><span class="what">IEEE, Student Member<small>Computer Society (2023–2024); Power and Energy Society (2017–2018); Women in Engineering (2016–2018). Branch: IEEE AUST Student Branch (2016–2018).</small></span></li>
       </ul>
     </div>
   </div>
@@ -659,8 +759,12 @@ footer a{color:inherit}
         <ul>
           <li><a href="https://scholar.google.com/citations?user=cvKcdi4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
           <li><a href="https://orcid.org/0000-0003-1254-0381" target="_blank" rel="noopener">ORCID 0000-0003-1254-0381</a></li>
+          <li><a href="https://www.scopus.com/authid/detail.uri?authorId=57439925500" target="_blank" rel="noopener">Scopus Author ID 57439925500</a></li>
+          <li><a href="https://www.webofscience.com/wos/author/record/PVC-9513-2026" target="_blank" rel="noopener">Web of Science ResearcherID PVC-9513-2026</a></li>
           <li><a href="https://www.researchgate.net/profile/A-O-M-Shamsuddoha" target="_blank" rel="noopener">ResearchGate</a></li>
+          <li><a href="https://ulab.academia.edu/AOMShamsuddoha" target="_blank" rel="noopener">Academia.edu</a></li>
           <li><a href="https://www.linkedin.com/in/aom-shamsuddoha" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://ulab.edu.bd/faculty/a-o-m-shamsuddoha" target="_blank" rel="noopener">ULAB faculty page</a></li>
         </ul>
       </div>
       <div>
@@ -678,7 +782,7 @@ footer a{color:inherit}
 <footer class="site-footer">
   <div class="wrap mono">
     <span>© 2026 A. O. M. Shamsuddoha</span>
-    <span>Last updated October 2026</span>
+    <span>Last updated November 2026</span>
   </div>
 </footer>
 
